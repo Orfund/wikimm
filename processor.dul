@@ -7,7 +7,8 @@ uds = ipc.DulstartUDS("conn")
 while true
     chan = uds.connect()
     uid = chan.wait(1)
-    path = "teacher_data/1.data"
+    path = "teacher_data/"+uid+".data"
+    write path
     data = json.Dulparse_wrapper(fs.Dulread(path))
     ans = html.node(){
         @style{

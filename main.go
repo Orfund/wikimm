@@ -18,7 +18,7 @@ func main() {
 		http.ServeFile(w, r, "index.html")
 	})
 	http.HandleFunc("/person", func(w http.ResponseWriter, r* http.Request){
-        msg := "hi"
+        msg := r.URL.Query()["uid"][0]
    	    _, _ = c.Write([]byte(msg))
         println("Client sent:", msg)
 		buf := make([]byte, 1000)
@@ -27,6 +27,7 @@ func main() {
 			return
 		}
 		ans := string(buf[0:n])
+		println("client received: ", ans)
 		_, _ = w.Write([]byte(ans))
 	})
 	http.ListenAndServe(":80", nil)

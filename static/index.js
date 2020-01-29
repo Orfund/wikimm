@@ -12,7 +12,7 @@ window.onload = ()=>{
         }
     };
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "/person");
+    xhr.open("GET", "/person?uid=1");
     xhr.onload = ()=>{
         document.querySelector(".p").innerHTML = xhr.responseText
     };
