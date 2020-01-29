@@ -1,20 +1,37 @@
 import "html.dul"
-import "ipc/ipc.ffi"
-import "./env.dul"
+import "IPC/ipc.ffi"
 import "JSON/json.ffi"
 import "fs/fs.ffi"
 
-uds = ipc.DulstartUDS("/Users/jernicozz/Documents/conn")
+uds = ipc.DulstartUDS("conn")
 while true
     chan = uds.connect()
     uid = chan.wait(1)
-    path = "/Users/jernicozz/WebstormProjects/wikimm/teacher_data/1.data"
+    path = "teacher_data/1.data"
     data = json.Dulparse_wrapper(fs.Dulread(path))
     ans = html.node(){
-        .text = data.name
+        @style{
+            .display = "flex"
+            .flex = "1 0 auto"
+            ."flex-direction" = "row"
+            .padding = "2rem"
+        }
         .view{
             .tag = "img"
             @attrs.src = data.ava
+            @style{
+                ."border-radius"="5rem"
+                .width = "10rem"
+                .height = "10rem"
+                ."object-fit" = "cover"
+                .flex = "0 0 auto"
+            }
+        }
+        .view{
+            .text = data.name
+            @style{
+                ."font-size" = "2rem"
+            }
         }
     }
     chan.push( ans.render() )

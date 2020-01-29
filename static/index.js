@@ -16,6 +16,7 @@ window.onload = ()=>{
     xhr.onload = ()=>{
         document.querySelector(".p").innerHTML = xhr.responseText
     };
+    xhr.send()
 
 
 

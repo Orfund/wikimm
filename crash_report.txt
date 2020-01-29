@@ -1,0 +1,6 @@
+0   DulVM                               0x0000000104813a0b handle_segfault + 43
+1   libsystem_platform.dylib            0x00007fff6ca0842d _sigtramp + 29
+2   ???                                 0x0000000000000000 0x0 + 0
+3   DulVM                               0x0000000104813995 workloop + 53
+4   libsystem_pthread.dylib             0x00007fff6ca13e65 _pthread_start + 148
+5   libsystem_pthread.dylib             0x00007fff6ca0f83b thread_start + 15
