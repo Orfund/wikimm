@@ -1,3 +1,4 @@
+
 window.onload = ()=>{
     let menutrigger = document.querySelector(".titlewrapper svg");
     menutrigger.onmouseover = function () {
@@ -9,5 +10,14 @@ window.onload = ()=>{
             menu.style.display = "none";
             menutrigger.style.background = "none";
         }
-    }
+    };
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "/person");
+    xhr.onload = ()=>{
+        document.querySelector(".p").innerHTML = xhr.responseText
+    };
+
+
+
 };
+
