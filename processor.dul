@@ -4,8 +4,8 @@ import "JSON/json.ffi"
 import "fs/fs.ffi"
 
 uds = ipc.DulstartUDS("conn")
+chan = uds.connect()
 while true
-    chan = uds.connect()
     uid = chan.wait(1)
     path = "teacher_data/"+uid+".data"
     write path

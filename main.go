@@ -7,7 +7,7 @@ import (
 func main() {
 
     c, _ := net.Dial("unix", "conn")
-   	defer c.Close()
+   	//defer c.Close()
 
 
 	fmt.Println("Server is listening...")
