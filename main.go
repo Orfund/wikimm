@@ -15,7 +15,7 @@ func main() {
 	http.Handle("/data/", http.StripPrefix("/data/",http.FileServer(http.Dir("data/"))))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r* http.Request){
-		http.ServeFile(w, r, "index.html")
+		http.ServeFile(w, r, "templates/index.html")
 	})
 	http.HandleFunc("/person", func(w http.ResponseWriter, r* http.Request){
         msg := r.URL.Query()["uid"][0]
@@ -30,6 +30,6 @@ func main() {
 		println("client received: ", ans)
 		_, _ = w.Write([]byte(ans))
 	})
-	http.ListenAndServe(":80", nil)
+	http.ListenAndServe(":8091", nil)
 
 }

@@ -7,7 +7,7 @@ uds = ipc.DulstartUDS("conn")
 chan = uds.connect()
 while true
     uid = chan.wait(1)
-    path = "teacher_data/"+uid+".data"
+    path = "teacher_data/" + uid + ".data"
     write path
     data = json.Dulparse_wrapper(fs.Dulread(path))
     ans = html.node(){
@@ -19,7 +19,7 @@ while true
         }
         .view{
             .tag = "img"
-            @attrs.src = data.ava
+            @attrs.src = "data/" + data.ava
             @style{
                 ."border-radius"="5rem"
                 .width = "10rem"
@@ -29,9 +29,21 @@ while true
             }
         }
         .view{
-            .text = data.name
             @style{
-                ."font-size" = "2rem"
+                ."display" = "flex"
+                ."flex-direction" = "column"
+            }
+            .view{
+                .text = data.name
+                @style{
+                    ."font-size" = "2rem"
+                }
+            }
+            .view{
+                .text = data.status
+                @style{
+                    ."font-size" = "1.5rem"
+                }
             }
         }
     }

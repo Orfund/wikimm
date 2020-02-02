@@ -14,7 +14,9 @@ window.onload = ()=>{
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "/person?uid=1");
     xhr.onload = ()=>{
-        document.querySelector(".p").innerHTML = xhr.responseText
+        document.getElementById("k").outerHTML = xhr.responseText
+        //ReactDOM.render(Person(JSON.parse(xhr.responseText)), document.getElementById("k"));
+
     };
     xhr.send()
 

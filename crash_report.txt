@@ -1,8 +1,6 @@
-0   DulVM                               0x000000010b915a0b handle_segfault + 43
+0   DulVM                               0x000000010000d9db handle_segfault + 43
 1   libsystem_platform.dylib            0x00007fff6ca0842d _sigtramp + 29
-2   ???                                 0x000000011206afd7 0x0 + 4597395415
-3   json.so                             0x000000010b9a9147 Dulparse_wrapper + 39
-4   DulVM                               0x000000010b915305 exec_thread_ + 4949
-5   DulVM                               0x000000010b915995 workloop + 53
-6   libsystem_pthread.dylib             0x00007fff6ca13e65 _pthread_start + 148
-7   libsystem_pthread.dylib             0x00007fff6ca0f83b thread_start + 15
+2   ???                                 0x00000000ffffffff 0x0 + 4294967295
+3   DulVM                               0x000000010000d965 workloop + 53
+4   libsystem_pthread.dylib             0x00007fff6ca13e65 _pthread_start + 148
+5   libsystem_pthread.dylib             0x00007fff6ca0f83b thread_start + 15

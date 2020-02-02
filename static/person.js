@@ -11,14 +11,29 @@ let socIcon = (info)=>{
     return `<img src="${iconSrc}" onclick="window.location.href='${info.link}'"/>`
 };
 
-let person = (pinfo)=>{
-    return `<div class="person">
-        <div class="pheader">
-            <img src="${pinfo.ava}"/>
-            <div class="pinfo">
-                <div class="pname">${pinfo.name}</div>
-                <div class="pplace">${pinfo.place}</div>
-                <div class="links">${pinfo.social.map(socIcon)}</div>
+let PersonName = (pinfo)=>(
+  <div className="pinfo">
+      <div>{pinfo.name}</div>
+      <div>{pinfo.surname}</div>
+
+  </div>
+);
+
+let Socials = (pinfo)=>(
+    <div className="socwrapper">
+        {console.log(pinfo.social)}
+    </div>
+);
+
+let Person = (pinfo)=> (
+    <div className="person">
+        <div className="pheader">
+            <img src={"data/"+pinfo.ava} alt=""/>
+            <PersonName {...pinfo}/>
+            <Socials {...pinfo}/>
         </div>
-    </div>`
-};
+        <div>
+            {pinfo.text}
+        </div>
+    </div>
+    );

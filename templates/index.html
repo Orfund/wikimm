@@ -5,8 +5,13 @@
     <title>MechMath wiki</title>
     <link rel="stylesheet" href="static/basic.css">
     <link rel="stylesheet" href="static/person.css">
-    <script src="static/person.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Load our React component. -->
+    <script src="static/person.js" type="text/babel"></script>
     <script src="static/index.js"></script>
+
 
 </head>
 <body>
@@ -25,7 +30,7 @@
             <div class="titletext">Mechmath wiki</div>
         </div>
         <div class="mainwrapper">
-            <div class="p"></div>
+            <div id="root"></div>
         </div>
     </div>
 </body>
